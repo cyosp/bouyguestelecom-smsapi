@@ -145,3 +145,9 @@ VERSION=$(grep "Version" bouyguestelecom-smsapi/DEBIAN/control | cut -d ' ' -f 2
 ARCH=$(grep "Architecture" bouyguestelecom-smsapi/DEBIAN/control | cut -d ' ' -f 2)
 mv bouyguestelecom-smsapi.deb bouyguestelecom-smsapi_${VERSION}_${ARCH}.deb
 ```
+
+## License
+
+**[bouyguestelecom-smsapi](https://github.com/cyosp/bouyguestelecom-smsapi)** is released under the BSD 3-Clause License.
+
+See the bundled `LICENSE.md` for details.
