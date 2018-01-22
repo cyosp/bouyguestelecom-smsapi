@@ -1,0 +1,45 @@
+#!/bin/bash
+
+###############################################################################
+#                                                                             #
+# Author: CYOSP                                                               #
+# Version: 1.0.0                                                              #
+#                                                                             #
+# --------------------------------------------------------------------------- #
+#                                                                             #
+# 1.0.0 - 2018-01-21                                                          #
+#  - First version                                                            #
+#                                                                             #
+###############################################################################
+
+# $DEV_ROOT is a variable set in development mode to specify location of the configuration file
+# In Production $DEV_ROOT is not set in order to have configuration file stored in /etc
+. $DEV_ROOT/etc/bouyguestelecom-smsapi/bouyguestelecom-smsapi.conf.src
+
+#
+# callBouyguesTelecomSmsApi function sends the SMS content in argument(s) following information defined in the configuration file
+# SMS content sent is prefixed with the name of the script which has sourced the library
+# It allows to know when receiving the SMS which process has sent it
+# Example: myScript.bash use the library and calls: callBouyguesTelecomSmsApi "Test"
+#          It will send the SMS: "[myScript.bash] Test"
+#
+# Return 0 if SMS has been sent, 1 otherwise
+#
+function callBouyguesTelecomSmsApi()
+{
+	local returnCode=0
+
+	local SRC_SCRIPT_NAME=`basename "$0"`
+	local MSG="[$SRC_SCRIPT_NAME] $*"
+
+	OUTPUT=$(bouyguessms -login "LOGIN" -pass "$PASS" -to "$TO" -msg "$MSG");
+	if [ $? -eq 0 ]
+	then
+		echo "SMS sent"
+	else
+		returnCode=1
+		echo "[ERROR] Fail to send SMS. Details: $OUTPUT"
+	fi
+
+	return $returnCode
+}
