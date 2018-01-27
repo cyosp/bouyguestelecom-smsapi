@@ -106,16 +106,16 @@ Steps to install it are:
 
  * Receive CYOSP GPG key from key server:
 
-    `sudo gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys D177D90A`
+    `sudo gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys D71923F61CC21365`
 
  * Add GPG key to apt:
 
-    `sudo gpg -a --export D177D90A | apt-key add -`
+    `sudo gpg -a --export D71923F61CC21365 | apt-key add -`
 
  * Add CYOSP repository:
 
     ```bash
-    sudo cat << EOF >> /etc/apt/sources.list
+    sudo cat << EOF > /etc/apt/sources.list.d/cyosp.list
 
     # CYOSP packages
     deb http://packages.cyosp.com/debian stretch main
