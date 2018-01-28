@@ -3,10 +3,12 @@
 ###############################################################################
 #                                                                             #
 # Author: CYOSP                                                               #
-# Version: 1.0.1                                                              #
+# Version: 1.0.2                                                              #
 #                                                                             #
 # --------------------------------------------------------------------------- #
 #                                                                             #
+# 1.0.2 - 2018-01-28                                                          #
+#  - Manage bouyguessms error output                                          #
 # 1.0.1 - 2018-01-28                                                          #
 #  - Fix: login used is now the correct one                                   #
 #  - Check bouyguessms is installed                                           #
@@ -37,7 +39,7 @@ function callBouyguesTelecomSmsApi()
         local SRC_SCRIPT_NAME=`basename "$0"`
         local MSG="[$SRC_SCRIPT_NAME] $*"
 
-        OUTPUT=$(bouyguessms -login "$LOGIN" -pass "$PASS" -to "$TO" -msg "$MSG");
+        OUTPUT=$(bouyguessms -login "$LOGIN" -pass "$PASS" -to "$TO" -msg "$MSG" 2>&1);
         if [ $? -eq 0 ]
         then
             echo "SMS sent"

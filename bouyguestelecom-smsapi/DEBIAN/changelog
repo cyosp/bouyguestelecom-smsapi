@@ -1,3 +1,16 @@
+bouyguestelecom-smsapi (1.0.2) stable; urgency=low
+
+  * Manage bouyguessms error output
+
+ -- CYOSP <cyosp@cyosp.com>  Sun, 28 Jan 2018 14:46:00 +0100
+
+bouyguestelecom-smsapi (1.0.1) stable; urgency=low
+
+  * Fix: login used is now the correct one
+  * Check bouyguessms is installed
+
+ -- CYOSP <cyosp@cyosp.com>  Sun, 28 Jan 2018 08:54:00 +0100
+
 bouyguestelecom-smsapi (1.0.0) stable; urgency=low
  
   * First version
