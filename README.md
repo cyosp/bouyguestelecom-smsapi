@@ -83,18 +83,21 @@ Exit code will be `0` in case of success, `1` otherwise.
  * Using a release available here: [bouyguessms releases](https://github.com/tomsquest/bouyguessms/releases)
  
  * Compiled from sources and installed into `/usr/local/bin`:
-```bash
-sudo apt install golang-go
-cat << EOF >> ~/.bashrc
-
-# Go environment
-export GOPATH=$HOME/go
-EOF
-go get github.com/tomsquest/bouyguessms
-cd $GOPATH/src/github.com/tomsquest/bouyguessms/cmd/bouyguessms
-go build
-sudo mv bouyguessms /usr/local/bin
-```
+    ```bash
+    sudo apt install golang-go
+    cat << EOF >> ~/.bashrc
+    
+    # Go environment
+    export GOPATH=$HOME/go
+    EOF
+    ```
+    Now start a new session in order to load `GOPATH` variable and run:
+    ```bash
+    go get github.com/tomsquest/bouyguessms
+    cd $GOPATH/src/github.com/tomsquest/bouyguessms/cmd/bouyguessms
+    go build
+    sudo mv bouyguessms /usr/local/bin
+    ```
 
 #### bouyguestelecom-smsapi
 

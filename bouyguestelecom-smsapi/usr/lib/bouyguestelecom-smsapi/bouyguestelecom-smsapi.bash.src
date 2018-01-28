@@ -3,10 +3,13 @@
 ###############################################################################
 #                                                                             #
 # Author: CYOSP                                                               #
-# Version: 1.0.0                                                              #
+# Version: 1.0.1                                                              #
 #                                                                             #
 # --------------------------------------------------------------------------- #
 #                                                                             #
+# 1.0.1 - 2018-01-28                                                          #
+#  - Fix: login used is now the correct one                                   #
+#  - Check bouyguessms is installed                                           #
 # 1.0.0 - 2018-01-21                                                          #
 #  - First version                                                            #
 #                                                                             #
@@ -29,17 +32,23 @@ function callBouyguesTelecomSmsApi()
 {
 	local returnCode=0
 
-	local SRC_SCRIPT_NAME=`basename "$0"`
-	local MSG="[$SRC_SCRIPT_NAME] $*"
+	if [ "$(whereis -b bouyguessms | cut -d ':' -f 2)" != ""  ]
+    then
+        local SRC_SCRIPT_NAME=`basename "$0"`
+        local MSG="[$SRC_SCRIPT_NAME] $*"
 
-	OUTPUT=$(bouyguessms -login "LOGIN" -pass "$PASS" -to "$TO" -msg "$MSG");
-	if [ $? -eq 0 ]
-	then
-		echo "SMS sent"
-	else
-		returnCode=1
-		echo "[ERROR] Fail to send SMS. Details: $OUTPUT"
-	fi
+        OUTPUT=$(bouyguessms -login "$LOGIN" -pass "$PASS" -to "$TO" -msg "$MSG");
+        if [ $? -eq 0 ]
+        then
+            echo "SMS sent"
+        else
+            returnCode=1
+            echo "[ERROR] Fail to send SMS. Details: $OUTPUT"
+        fi
+    else
+        returnCode=1
+        echo "[ERROR] bouyguessms is not installed"
+    fi
 
 	return $returnCode
 }
