@@ -1,8 +1,8 @@
 Package: bouyguestelecom-smsapi
-Version: 1.1.0-0
+Version: 1.1.0-1
 Section: base
 Priority: optional
-Architecture: amd64
+Architecture: all
 Depends: bash, util-linux
 Maintainer: CYOSP
 Description: A Bash API for Bouygues Telecom unofficial SMS API
