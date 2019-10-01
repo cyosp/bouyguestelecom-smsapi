@@ -102,8 +102,8 @@ Exit code will be `0` in case of success, `1` otherwise.
 #### bouyguestelecom-smsapi
 
 A [Debian](https://www.debian.org) package is available at [http://packages.cyosp.com/debian](http://packages.cyosp.com/debian) for:
- * [Stretch](https://www.debian.org/releases/stretch/) version
- * amd64 architecture
+ * [Stretch](https://www.debian.org/releases/stretch/) and [Buster](https://www.debian.org/releases/buster/) version
+ * `amd64` and `armhf` architectures
 
 Steps to install it are:
 
