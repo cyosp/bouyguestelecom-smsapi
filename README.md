@@ -78,6 +78,8 @@ Exit code will be `0` in case of success, `1` otherwise.
 
 #### bouyguessms
 
+Only needed if you doesn't use *bouyguestelecom-smsapi* Debian package.
+
 [bouyguessms](https://github.com/tomsquest/bouyguessms) can be installed in two ways:
 
  * Using a release available here: [bouyguessms releases](https://github.com/tomsquest/bouyguessms/releases)
