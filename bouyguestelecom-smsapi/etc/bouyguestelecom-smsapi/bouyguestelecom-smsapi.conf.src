@@ -1,6 +1,6 @@
 # Bouygues Telecom login
 LOGIN="0606060606"
-# Password associated to login
+# Plain or base64 password associated to login
 PASS="1a2B3c4D5e6F7g"
 # Target mobile phones numbers separated by: ';' character
 TO="0707070707"

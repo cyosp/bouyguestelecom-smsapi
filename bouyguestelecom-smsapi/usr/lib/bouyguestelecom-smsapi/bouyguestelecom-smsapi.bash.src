@@ -41,7 +41,8 @@ function callBouyguesTelecomSmsApi()
         local SRC_SCRIPT_NAME=`basename "$0"`
         local MSG="[$SRC_SCRIPT_NAME @ $(date "+%F %T")] $*"
 
-        OUTPUT=$(bouyguessms -login "$LOGIN" -pass "$PASS" -to "$TO" -msg "$MSG" 2>&1);
+        local PASSWORD=$(PASS_DECODED=$(echo "$PASS" | base64 -d 2>/dev/null) && echo "$PASS_DECODED" || echo "$PASS")
+        OUTPUT=$(bouyguessms -login "$LOGIN" -pass "$PASSWORD" -to "$TO" -msg "$MSG" 2>&1);
         if [ $? -eq 0 ]
         then
             echo "SMS sent"
