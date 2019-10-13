@@ -1,4 +1,4 @@
-# Bouygues Telecom login
+# Plain or base64 Bouygues Telecom login
 LOGIN="0606060606"
 # Plain or base64 password associated to login
 PASS="1a2B3c4D5e6F7g"
