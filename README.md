@@ -6,8 +6,7 @@ A Bash API for Bouygues Telecom SMS unofficial API (5 SMS /day limitation)
 
 *bouyguestelecom-smsapi* is a Bash library which allows to use Bouygues Telecom unofficial SMS API.
 
-It's based on [bouyguessms](https://github.com/tomsquest/bouyguessms) program written in [Go](https://golang.org) by
-[Thomas Queste](https://github.com/tomsquest).
+It's based on [bouyguestelecom-sms](https://github.com/cyosp/bouyguestelecom-sms).
 
 ## Bouygues Telecom SMS unofficial API
 
@@ -15,7 +14,7 @@ To be able to use this feature, you must have subscribed a mobile line with [Bou
 
 With a Bouygues Telecom account, using their Web interface, you are allowed to send until 5 SMS per day.
 
-It's on this possibility [bouyguessms](https://github.com/tomsquest/bouyguessms) is based.
+It's on this possibility [bouyguestelecom-sms](https://github.com/cyosp/bouyguestelecom-sms) is based.
 
 And so this Bash API.
 
@@ -76,30 +75,11 @@ Exit code will be `0` in case of success, `1` otherwise.
 
 ### Install
 
-#### bouyguessms
+#### bouyguestelecom-sms
 
-Only needed if you doesn't use *bouyguestelecom-smsapi* Debian package.
+If you use *bouyguestelecom-smsapi* Debian package this step is not needed.
 
-[bouyguessms](https://github.com/tomsquest/bouyguessms) can be installed in two ways:
-
- * Using a release available here: [bouyguessms releases](https://github.com/tomsquest/bouyguessms/releases)
- 
- * Compiled from sources and installed into `/usr/local/bin`:
-    ```bash
-    sudo apt install golang-go
-    cat << EOF >> ~/.bashrc
-    
-    # Go environment
-    export GOPATH=$HOME/go
-    EOF
-    ```
-    Now start a new session in order to load `GOPATH` variable and run:
-    ```bash
-    go get github.com/tomsquest/bouyguessms
-    cd $GOPATH/src/github.com/tomsquest/bouyguessms/cmd/bouyguessms
-    go build
-    sudo mv bouyguessms /usr/local/bin
-    ```
+Otherwise, build and installation steps are described in [bouyguestelecom-sms](https://github.com/cyosp/bouyguestelecom-sms) repository.
 
 #### bouyguestelecom-smsapi
 
