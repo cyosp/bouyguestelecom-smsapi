@@ -103,7 +103,7 @@ Steps to install it are:
     sudo cat << EOF > /etc/apt/sources.list.d/cyosp.list
 
     # CYOSP packages
-    deb http://packages.cyosp.com/debian stretch main
+    deb http://packages.cyosp.com/debian buster main
 
     EOF
     ```
