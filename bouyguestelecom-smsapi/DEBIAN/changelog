@@ -1,3 +1,9 @@
+bouyguestelecom-smsapi (1.4.1) stable; urgency=high
+
+  * Fix: bouyguestelecom-sms exit code not managed
+
+ -- CYOSP <cyosp@cyosp.com>  Mon, 01 Sep 2020 10:10:00 +0200
+
 bouyguestelecom-smsapi (1.4.0) stable; urgency=low
 
   * Replace bouyguessms by bouyguestelecom-sms

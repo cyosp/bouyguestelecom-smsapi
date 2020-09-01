@@ -3,10 +3,12 @@
 ###############################################################################
 #                                                                             #
 # Author: CYOSP                                                               #
-# Version: 1.4.0                                                              #
+# Version: 1.4.1                                                              #
 #                                                                             #
 # --------------------------------------------------------------------------- #
 #                                                                             #
+# 1.4.1 - 2020-09-01                                                          #
+#  - Fix: bouyguestelecom-sms exit code not managed                           #
 # 1.4.0 - 2019-11-28                                                          #
 #  - Replace bouyguessms by bouyguestelecom-sms                               #
 # 1.3.0 - 2019-10-13                                                          #
@@ -49,7 +51,8 @@ function callBouyguesTelecomSmsApi()
 
         local LOGIN=$(LOGIN_DECODED=$(echo "$LOGIN" | base64 -d 2>/dev/null) && echo "$LOGIN_DECODED" || echo "$LOGIN")
         local PASSWORD=$(PASS_DECODED=$(echo "$PASS" | base64 -d 2>/dev/null) && echo "$PASS_DECODED" || echo "$PASS")
-        local OUTPUT=$(bouyguestelecom-sms -login "$LOGIN" -pass "$PASSWORD" -to "$TO" -msg "$MSG" 2>&1);
+        local OUTPUT
+        OUTPUT=$(bouyguestelecom-sms -login "$LOGIN" -pass "$PASSWORD" -to "$TO" -msg "$MSG" 2>&1)
         if [ $? -eq 0 ]
         then
             echo "SMS sent"
