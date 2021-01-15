@@ -3,10 +3,12 @@
 ###############################################################################
 #                                                                             #
 # Author: CYOSP                                                               #
-# Version: 1.4.1                                                              #
+# Version: 1.5.0                                                              #
 #                                                                             #
 # --------------------------------------------------------------------------- #
 #                                                                             #
+# 1.5.0 - 2021-01-15                                                          #
+#  - Add optional LASTNAME property for bouyguestelecom-sms 1.1.0             #
 # 1.4.1 - 2020-09-01                                                          #
 #  - Fix: bouyguestelecom-sms exit code not managed                           #
 # 1.4.0 - 2019-11-28                                                          #
@@ -49,10 +51,15 @@ function callBouyguesTelecomSmsApi()
         local SRC_SCRIPT_NAME=`basename "$0"`
         local MSG="[$SRC_SCRIPT_NAME @ $(date "+%F %T")] $*"
 
+        if [ -n "$LASTNAME" ]
+        then
+            local LASTNAME_PARAM="-lastname"
+            local LASTNAME_VALUE=$(echo "$LASTNAME" | base64 -d)
+        fi
         local LOGIN=$(LOGIN_DECODED=$(echo "$LOGIN" | base64 -d 2>/dev/null) && echo "$LOGIN_DECODED" || echo "$LOGIN")
         local PASSWORD=$(PASS_DECODED=$(echo "$PASS" | base64 -d 2>/dev/null) && echo "$PASS_DECODED" || echo "$PASS")
         local OUTPUT
-        OUTPUT=$(bouyguestelecom-sms -login "$LOGIN" -pass "$PASSWORD" -to "$TO" -msg "$MSG" 2>&1)
+        OUTPUT=$(bouyguestelecom-sms $LASTNAME_PARAM "$LASTNAME_VALUE" -login "$LOGIN" -pass "$PASSWORD" -to "$TO" -msg "$MSG" 2>&1)
         if [ $? -eq 0 ]
         then
             echo "SMS sent"

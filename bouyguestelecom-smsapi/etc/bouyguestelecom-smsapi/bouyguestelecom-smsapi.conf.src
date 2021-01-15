@@ -1,3 +1,5 @@
+# Base64 Bouygues Telecom account last name
+LASTNAME="TGFzdCBuYW1lCg=="
 # Plain or base64 Bouygues Telecom login
 LOGIN="0606060606"
 # Plain or base64 password associated to login

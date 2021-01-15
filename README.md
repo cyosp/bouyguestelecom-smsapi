@@ -1,7 +1,7 @@
 # bouyguestelecom-smsapi
 A Bash API for Bouygues Telecom SMS unofficial API (5 SMS /day limitation)
 
-![Stable version](https://img.shields.io/badge/stable-1.4.1-blue.svg)
+![Stable version](https://img.shields.io/badge/stable-1.5.0-blue.svg)
 [![BSD-3 license](https://img.shields.io/badge/license-BSD--3--Clause-428F7E.svg)](https://tldrlegal.com/license/bsd-3-clause-license-%28revised%29)
 
 *bouyguestelecom-smsapi* is a Bash library which allows to use Bouygues Telecom unofficial SMS API.
@@ -38,14 +38,17 @@ Configuration file: `/etc/bouyguestelecom-smsapi/bouyguestelecom-smsapi.conf.src
 
 Thus syntax is the Bash one and is composed of the following variables:
 
-| Name  | Meaning                                                  |
-|:------|:---------------------------------------------------------|
-| LOGIN | Plain or base64 Bouygues Telecom login                   |
-| PASS  | Plain or base64 password associated to login             |
-| TO    | Target mobile phones numbers separated by: ';' character |
+| Name     | Meaning                                                  | Mandatory |
+|:---------|:---------------------------------------------------------|-----------|
+| LASTNAME | Base64 Bouygues Telecom account last name                | false     |
+| LOGIN    | Plain or base64 Bouygues Telecom login                   | true      |
+| PASS     | Plain or base64 password associated to login             | true      |
+| TO       | Target mobile phones numbers separated by: ';' character | true      |
 
 Example:
 ```bash
+# Base64 Bouygues Telecom account last name
+LASTNAME="TGFzdCBuYW1lCg=="
 # Plain or base64 Bouygues Telecom login
 LOGIN="0606060606"
 # Plain or base64 password associated to login

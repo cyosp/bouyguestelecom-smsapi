@@ -1,3 +1,9 @@
+bouyguestelecom-smsapi (1.5.0) stable; urgency=low
+
+  * Add optional LASTNAME property for bouyguestelecom-sms 1.1.0
+
+ -- CYOSP <cyosp@cyosp.com>  Fri, 15 Jan 2021 06:50:00 +0100
+
 bouyguestelecom-smsapi (1.4.1) stable; urgency=high
 
   * Fix: bouyguestelecom-sms exit code not managed
@@ -42,7 +48,7 @@ bouyguestelecom-smsapi (1.0.1) stable; urgency=low
  -- CYOSP <cyosp@cyosp.com>  Sun, 28 Jan 2018 08:54:00 +0100
 
 bouyguestelecom-smsapi (1.0.0) stable; urgency=low
- 
+
   * First version
 
  -- CYOSP <cyosp@cyosp.com>  Mon, 22 Jan 2018 22:00:00 +0100
