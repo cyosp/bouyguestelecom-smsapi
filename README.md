@@ -80,46 +80,9 @@ Exit code will be `0` in case of success, `1` otherwise.
 
 #### bouyguestelecom-sms
 
-If you use *bouyguestelecom-smsapi* Debian package this step is not needed.
+Build and installation steps are described in [bouyguestelecom-sms](https://github.com/cyosp/bouyguestelecom-sms) repository.
 
-Otherwise, build and installation steps are described in [bouyguestelecom-sms](https://github.com/cyosp/bouyguestelecom-sms) repository.
-
-#### bouyguestelecom-smsapi
-
-A [Debian](https://www.debian.org) package is available at [http://packages.cyosp.com/debian](http://packages.cyosp.com/debian) for:
- * [Stretch](https://www.debian.org/releases/stretch/) and [Buster](https://www.debian.org/releases/buster/) version
- * `amd64` and `armhf` architectures
-
-Steps to install it are:
-
- * Receive CYOSP GPG key from key server:
-
-    `sudo gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 15205D0CC73A9DF1`
-
- * Add GPG key to apt:
-
-    `sudo gpg -a --export 15205D0CC73A9DF1 | apt-key add -`
-
- * Add CYOSP repository:
-
-    ```bash
-    sudo cat << EOF > /etc/apt/sources.list.d/cyosp.list
-
-    # CYOSP packages
-    deb http://packages.cyosp.com/debian buster main
-
-    EOF
-    ```
-
- * Update repository database:
-
-    `sudo apt update`
-
- * Install package:
- 
-    `sudo apt install bouyguestelecom-smsapi`
-
-## Create the Debian package
+## Create Debian package
 
 You can create the Debian package with the following commands:
 
